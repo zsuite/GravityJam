@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MoveTowardsBody : MonoBehaviour {
 	public Transform target;
-	public float gravityNum = 9.8f;
+	public float gravityNum = 100f;
 	// Use this for initialization
 	void Start () {
 	
@@ -12,7 +12,9 @@ public class MoveTowardsBody : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		Vector3 gravityDirection = transform.position - target.position;
-		target.rigidbody.AddForce(gravityDirection.normalized * gravityNum * Time.fixedDeltaTime);
+		Vector3 gravityDirection = target.position - transform.position;
+		transform.up = -gravityDirection;
+
+		rigidbody.AddForce(gravityDirection.normalized * gravityNum * Time.fixedDeltaTime);
 	}
 }
