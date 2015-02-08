@@ -19,14 +19,14 @@ public class MouseLook : MonoBehaviour {
 
 	public enum RotationAxes { MouseXAndY = 0, MouseX = 1, MouseY = 2 }
 	public RotationAxes axes = RotationAxes.MouseXAndY;
-	public float sensitivityX = 15F;
-	public float sensitivityY = 15F;
+	public float sensitivityX;
+	public float sensitivityY;
 
-	public float minimumX = -360F;
-	public float maximumX = 360F;
+	public float minimumX;
+	public float maximumX;
 
-	public float minimumY = -60F;
-	public float maximumY = 60F;
+	public float minimumY;
+	public float maximumY;
 
 	float rotationY = 0F;
 
