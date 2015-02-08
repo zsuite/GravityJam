@@ -2,8 +2,8 @@
 using System.Collections;
 
 public class FauxGravityAttractor : MonoBehaviour {
-
-	public float gravity = -12;
+	//changed it to 30 so bullets could go faster. Updated other thing proportionally as well.
+	public float gravity = -30;
 
 	public void Attract(Transform body) {
 		Vector3 gravityUp = (body.position - transform.position).normalized;

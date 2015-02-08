@@ -25,6 +25,14 @@ public class FogControllerDay : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		makeFog ();
+
+		//Temporary way to switch it on or off in game
+		if (Input.GetKeyDown (KeyCode.F)) {
+			isNight = true;
+		}
+		if (Input.GetKeyDown (KeyCode.G)) {
+			isNight = false;
+		}
 	}
 
 
