@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour {
 	//Instantiates a bullet at the players location and sets its velocity forward. 
 	void Shoot(){
 		if (Input.GetButtonDown("Fire1")) {
-			GameObject b = Instantiate (bullet, shotLocation, transform.rotation) as GameObject;
+			GameObject b = Instantiate (bullet, shotLocation, transform.GetChild(0).rotation) as GameObject;
 			//Moved the velocity part ot the BulletController script. 
 		}
 	}
