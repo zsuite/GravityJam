@@ -12,6 +12,7 @@ public class BulletController : MonoBehaviour {
 	void Start () {
 		//sets initial velocity
 		gameObject.rigidbody.velocity = transform.forward * moveSpeed;
+		timer = 0;
 	}
 	
 	// Update is called once per frame
@@ -24,6 +25,15 @@ public class BulletController : MonoBehaviour {
 	//sets a timer with time.delta time and then destroys the bullet after DeathTime seconds. 
 	void Death() {
 		if (timer > DeathTime){
+			Destroy (gameObject);
+		}
+	}
+
+	//this will make the bullet die whenever it collides with anything. 
+	void OnTriggerEnter (Collider thing){
+		//the player controller script kills the buillets any ways in its on trigger enter script. 
+		//This is to avoid order issues
+		if (thing.tag == "Obstacle") {
 			Destroy (gameObject);
 		}
 	}

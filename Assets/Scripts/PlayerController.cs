@@ -18,8 +18,8 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void Update() {
-		//sets the shotlocation to just below your head and in front of you
-		shotLocation = new Vector3 (transform.position.x, transform.position.y, transform.position.z + 1.3f);
+		//sets the shotlocation to just in front of you
+		shotLocation = new Vector3 (transform.localPosition.x, transform.localPosition.y +1, transform.localPosition.z + 1.3f);
 		Movement ();
 		Shoot ();
 	}
