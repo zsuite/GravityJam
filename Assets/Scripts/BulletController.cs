@@ -32,8 +32,7 @@ public class BulletController : MonoBehaviour {
 	//this will make the bullet die whenever it collides with anything. 
 	void OnTriggerEnter (Collider thing){
 		//the player controller script kills the buillets any ways in its on trigger enter script. 
-		//This is to avoid order issues
-		if (thing.tag == "Obstacle") {
+		if (thing.tag == "Obstacle" || thing.tag == "World") {
 			Destroy (gameObject);
 		}
 	}
