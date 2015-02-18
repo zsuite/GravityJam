@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour {
 	public int maxHealth = 3;
 	int health;
 	//the place form which the person shoots. Will be a bit lower than his own position so it can be seen.
-	Vector3 shotLocation;
+	public Transform shotLocation;
 
 	void Start(){
 		//sets initial health to max health.
@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour {
 
 	void Update() {
 		//sets the shotlocation to just in front of you
-		shotLocation = new Vector3 (transform.localPosition.x, transform.localPosition.y +1, transform.localPosition.z + 1.3f);
+//		shotLocation = new Vector3 (transform.localPosition.x, transform.localPosition.y +1, transform.localPosition.z + 1.3f);
 		Movement ();
 		Shoot ();
 	}
@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour {
 	//Instantiates a bullet at the players location and sets its velocity forward. 
 	void Shoot(){
 		if (Input.GetButtonDown("Fire1")) {
-			GameObject b = Instantiate (bullet, shotLocation, transform.GetChild(0).rotation) as GameObject;
+			GameObject b = Instantiate (bullet, shotLocation.position, transform.GetChild(0).rotation) as GameObject;
 			//Moved the velocity part ot the BulletController script. 
 		}
 	}
