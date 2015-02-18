@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour {
 	private Vector3 moveDirection;
 	public GameObject bullet;
 	public int maxHealth = 3;
+	public Transform CelestialBody;
 	int health;
 	//the place form which the person shoots. Will be a bit lower than his own position so it can be seen.
 	public Transform shotLocation;
@@ -45,6 +46,7 @@ public class PlayerController : MonoBehaviour {
 	void Shoot(){
 		if (Input.GetButtonDown("Fire1")) {
 			GameObject b = Instantiate (bullet, shotLocation.position, transform.GetChild(0).rotation) as GameObject;
+			b.transform.parent = CelestialBody;
 			//Moved the velocity part ot the BulletController script. 
 		}
 	}
